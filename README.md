@@ -1,6 +1,106 @@
-=======
-# advertima
-Fun with FashionMNIST.
+# For Advertima
+Fun with Fashion-MNIST.
+
+In this repo, there is a directory `radim`. In this directory, you will find the `experiments` directory with the trained models, logs and tensorboard files. You will also find the training scripts in the `trn.py` and `FashionMnistDataset.py` files and model definitions in the `models` directory.
+
+This repository is build upon the original Fashion-MNIST repo. You should be able to run it in some appropriate Python environment (with Python 3.6.7 and pytorch 1.1.0, for example).
+
+Bellow, I quickly sum up the implemented ideas, results and some rough complexity analysis.
+
+## Implemented ideas
+
+I implemented three architectures:
+
+- a fully-convolutional architecture,
+- a MobileNet-based architecture [arxiv paper](https://arxiv.org/abs/1704.04861),
+- a DenseNetBC-based [arxiv paper](https://arxiv.org/abs/1608.06993).
+
+The model definitions are in the `radim/models` directory in the repo. The files with the definitions for three architectures are named `Classifier**`, `MobileNet**`, and `DenseNetBC**`, in that order.
+
+The best results of the MobileNet and DenseNet are similar - approximately 95% accuracy on the validation dataset. The best validation accuracy of the fully-convolutional network is approx. 90%.
+
+During the training, different augmentation techniques were tried out. For the overview of the variety of the autmentation, see the `radim/conf.json` file, please.
+
+The networks were trained with the `Cross entropy` loss.
+
+### fully-convolutional architecture
+
+When training with this architecture, I used the ELU activation [archiv paper](https://arxiv.org/abs/1511.07289).
+
+| Name | Configuration |
+| --- | --- |
+| BatchNorm | - |
+| Drop | p = 0.1 |
+| Conv2D | 32, k = (3, 3), s = 2, p = 0 |
+| BatchNorm | - |
+| ELU | - |
+| Drop | p = 0.2 |
+| Conv2D | 64, k = (3, 3), s = 1, p = 0 |
+| BatchNorm | - |
+| ELU | - |
+| Drop | p = 0.3 |
+| Conv2D | 128, k = (3, 3), s = 1, p = 0 |
+| BatchNorm | - |
+| ELU | - |
+| FullyConnected | 100 |
+| ELU | - |
+| FullyConnected | 10 |
+| SoftMax | - |
+
+### a MobileNet-based architecture
+
+When training with this architecture, I used the ELU activation [archiv paper](https://arxiv.org/abs/1511.07289).
+
+| Name | Configuration |
+| --- | --- |
+| BatchNorm | - |
+| SeparableConv2D | 32, k = (3, 3), s = 1, p = 1 |
+| BatchNorm | - |
+| ELU | - |
+| Drop | 0.1 |
+| SeparableConv2D | 64, k = (3, 3), s = 2, p = 1 |
+| BatchNorm | - |
+| ELU | - |
+
+5 x
+| Drop | 0.1 |
+| SeparableConv2D | 128, k = (3, 3), s = 1, p = 1 |
+| BatchNorm | - |
+| ELU | - |
+
+| Drop | 0.2 |
+| SeparableConv2D | 128, k = (3, 3), s = 2, p = 0 |
+| BatchNorm | - |
+| ELU | - |
+| Drop | 0.3 |
+| SeparableConv2D | 256, k = (3, 3), s = 2, p = 0 |
+| BatchNorm | - |
+| ELU | - |
+| FullyConnected | 10 |
+| SoftMax | - |
+
+### a DenseNetBC-based architecture
+
+k = 16
+theta = 0.5
+
+| Name | Configuration |
+| --- | --- |
+| BatchNorm | - |
+| Conv2D | 4 * k, (3, 3), s = 2, p = 0 |
+| BatchNorm | - |
+| ReLU | - |
+| DenseBlock with bottleneck | reps = 5 |
+| Transition with compression | - |
+| DenseBlock with bottleneck | reps = 5 |
+| Transition with compression | - |
+| FullyConnected | 10 |
+| SoftMax | - |
+
+
+## Space and Time Complexity
+
+
 
 # Fashion-MNIST
 

@@ -111,7 +111,7 @@ class MobileNet(nn.Module):
 
         x = x.reshape((x.size()[0], -1))
 
-        x = nonlin(self.linear_00(x))
+        x = self.linear_00(x)
 
         x = F.softmax(x, dim=1)
 
