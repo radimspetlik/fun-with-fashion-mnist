@@ -1,0 +1,2 @@
+# advertima
+Fun with FashionMNIST.
