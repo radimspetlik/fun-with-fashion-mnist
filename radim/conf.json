@@ -1,0 +1,35 @@
+{
+    "model" : {
+        "architecture":         "DenseNetBC02",
+        "input_size_h":         28,
+        "input_size_w":         28,
+        "input_channels":       1
+    },
+
+    "trn": {
+        "continue-model": "",
+        "continue-model-partly": "",
+
+        "dataset_dir":   "c:/Users/jarmi/fashion-mnist/data/fashion/",
+        "experiments_dir":   "c:/Users/jarmi/fashion-mnist/radim/experiments/",
+
+        "batch_size":           500,
+        "learning_rate":        1e-3,
+        "epochs":               500,
+        "warmup_epochs":        0,
+        "momentum":             0,
+
+        "augment": true,
+
+        "brightness_augmentation_amount": 20,
+        "augmentation_contrast_min": 0.8,
+        "augmentation_contrast_max": 1.2,
+        "augmentation_rotation": [0],
+        "augmentation_translation": 0.0,
+        "augmentation_scale_min": 0.9,
+        "augmentation_scale_max": 1.1,
+        "augmentation_shear": 0,
+
+        "criterion": "cross_entropy"
+    }
+}
