@@ -61,13 +61,12 @@ When training with this architecture, I used the ELU activation [archiv paper](h
 | SeparableConv2D | 64, k = (3, 3), s = 2, p = 1 |
 | BatchNorm | - |
 | ELU | - |
-
-5 x
+| 5 x | : |
 | Drop | 0.1 |
 | SeparableConv2D | 128, k = (3, 3), s = 1, p = 1 |
 | BatchNorm | - |
 | ELU | - |
-
+| - | - |
 | Drop | 0.2 |
 | SeparableConv2D | 128, k = (3, 3), s = 2, p = 0 |
 | BatchNorm | - |
