@@ -17,9 +17,9 @@ I implemented three architectures:
 
 The model definitions are in the `radim/models` directory in the repo. The files with the definitions for three architectures are named `Classifier**`, `MobileNet**`, and `DenseNetBC**`, in that order.
 
-The best results of the MobileNet and DenseNet are similar - approximately 95% accuracy on the validation dataset. The best validation accuracy of the fully-convolutional network is approx. 90%.
+The best results of the MobileNet and DenseNet are similar - approximately 94% accuracy on the validation dataset. The best validation accuracy of the fully-convolutional network is approx. 90%.
 
-During the training, different augmentation techniques were tried out. For the overview of the variety of the autmentation, see the `radim/conf.json` file, please.
+During the training, different augmentation techniques were tried out. For the overview of the types of the augmentation used, see the `radim/conf.json` file, please.
 
 The networks were trained with the `Cross entropy` loss.
 
@@ -80,7 +80,7 @@ When training with this architecture, I used the ELU activation [archiv paper](h
 
 ### a DenseNetBC-based architecture
 
-k = 16
+k = 16,
 theta = 0.5
 
 | Name | Configuration |
@@ -98,6 +98,8 @@ theta = 0.5
 
 
 ## Space and Time Complexity
+
+
 
 
 
