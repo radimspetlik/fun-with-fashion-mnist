@@ -368,6 +368,11 @@ if __name__ == '__main__':
     summary = prepare_summary(experiments_directory, basename)
 
     model_name, model, losses, epoch_shift = load_models_prepare_losses_file(experiments_directory)
+
+    from profile import profile
+    custom_ops = {}
+    num_ops, num_params = profile(model, (1, 1, 28, 28), custom_ops)
+    logger.info('[Profiler] ops: {:d}, params: {:d}'.format(int(num_ops), int(num_params)))
     logger.info(config)
     trn_loader, val_loader, tst_loader, trn_ds, val_ds, tst_ds = prepare_loaders(config, logger, args['--skip-tst-dataset'])
 

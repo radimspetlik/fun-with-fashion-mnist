@@ -99,8 +99,20 @@ theta = 0.5
 
 ## Space and Time Complexity
 
+To perform the analysis, I used the utility `profiler` from the [Pytorch Toolbox](https://github.com/e-lab/pytorch-toolbox/tree/master/profiler).
 
 
+| Name | # OPs | # Params |
+| --- | --- | --- |
+| fully-convolutional architecture | 18.625.922 | 1.131.032 |
+| a MobileNet-based architecture | 262.985.776  | 731.286 |
+| a DenseNetBC-based architecture | 36.819.864 | 190.520 |
+
+Since the DenseNet-BC and the MobileNet have approximately the same performance, the DenseNet-BC wins by the lower time and space complexity.
+
+## BONUS
+
+I did not implement the bonus task. The assignment is too broad.
 
 
 # Fashion-MNIST
