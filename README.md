@@ -1,9 +1,8 @@
-# For Advertima
-Fun with Fashion-MNIST.
+# Fun with Fashion-MNIST
 
 In this repo, there is a directory `radim`. In this directory, you will find the `experiments` directory with the trained models, logs and tensorboard files. You will also find the training scripts in the `trn.py` and `FashionMnistDataset.py` files and model definitions in the `models` directory.
 
-This repository is build upon the original Fashion-MNIST repo. You should be able to run it in some appropriate Python environment (with Python 3.6.7 and pytorch 1.1.0, for example).
+This repository is build upon the original [Fashion-MNIST repo](https://github.com/zalandoresearch/fashion-mnist). You should be able to run it in some appropriate Python environment (with Python 3.6.7 and pytorch 1.1.0, for example).
 
 Bellow, I quickly sum up the implemented ideas, results and some rough complexity analysis.
 
