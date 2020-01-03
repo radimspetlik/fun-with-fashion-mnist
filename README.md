@@ -47,7 +47,7 @@ When training with this architecture, I used the ELU activation [archiv paper](h
 | FullyConnected | 10 |
 | SoftMax | - |
 
-### a MobileNet-based architecture
+### MobileNet-based architecture
 
 When training with this architecture, I used the ELU activation [archiv paper](https://arxiv.org/abs/1511.07289).
 
@@ -78,10 +78,9 @@ When training with this architecture, I used the ELU activation [archiv paper](h
 | FullyConnected | 10 |
 | SoftMax | - |
 
-### a DenseNetBC-based architecture
+### DenseNetBC-based architecture
 
-k = 16,
-theta = 0.5
+k = 16
 
 | Name | Configuration |
 | --- | --- |
@@ -90,9 +89,9 @@ theta = 0.5
 | BatchNorm | - |
 | ReLU | - |
 | DenseBlock with bottleneck | reps = 5 |
-| Transition with compression | - |
+| Transition with compression | theta = 0.5 |
 | DenseBlock with bottleneck | reps = 5 |
-| Transition with compression | - |
+| Transition with compression | theta = 0.5 |
 | FullyConnected | 10 |
 | SoftMax | - |
 
