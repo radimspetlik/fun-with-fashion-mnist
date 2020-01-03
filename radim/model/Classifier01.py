@@ -49,7 +49,7 @@ class Classifier(nn.Module):
         nn.init.kaiming_normal_(self.linear_00.weight, mode='fan_in')
 
         self.linear_01 = torch.nn.Linear(100, 10)
-        nn.init.kaiming_normal_(self.linear_00.weight, mode='fan_in')
+        nn.init.kaiming_normal_(self.linear_01.weight, mode='fan_in')
 
     def load_state_dict_partly(self, state_dict):
         own_state = self.state_dict()
